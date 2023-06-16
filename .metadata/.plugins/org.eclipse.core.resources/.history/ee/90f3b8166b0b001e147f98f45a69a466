@@ -1,0 +1,8 @@
+package com.abc.intro;
+
+public class CustomerManager {
+	private ICustomerDal customerDal;//ICustomerDal bir referrence type dir ve bu o interfaceyi implement eden tüm claassları tutabilir
+	public CustomerManager() {
+		
+	}
+}

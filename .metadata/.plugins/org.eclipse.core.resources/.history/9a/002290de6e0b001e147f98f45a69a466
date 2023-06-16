@@ -1,0 +1,15 @@
+package com.abc.intro;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+       ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext();
+       CustomerManager manager= new CustomerManager(new CustomerDal());
+       manager.add();
+    }
+}

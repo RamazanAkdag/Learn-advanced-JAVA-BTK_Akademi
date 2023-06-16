@@ -1,0 +1,9 @@
+package com.abc.intro;
+
+public class CustomerDal implements ICustomerDal {
+	String connectionString;
+	public void add() {
+		System.out.println("Connection String : "+this.connectionString);
+		System.out.println("oracle veritabanına eklendi");
+	}
+}

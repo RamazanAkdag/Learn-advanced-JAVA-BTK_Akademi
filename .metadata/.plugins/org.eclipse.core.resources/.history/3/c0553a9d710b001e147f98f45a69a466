@@ -1,0 +1,19 @@
+package com.abc.intro;
+
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	ICustomerService service args= 
+    	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+       CustomerManager manager= new CustomerManager(context.getBean("database",ICustomerDal.class));
+       manager.add();
+    }
+}

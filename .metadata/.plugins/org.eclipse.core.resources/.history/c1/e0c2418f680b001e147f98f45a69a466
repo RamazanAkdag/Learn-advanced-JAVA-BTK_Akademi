@@ -1,0 +1,7 @@
+package com.abc.intro;
+
+public class customerManager {
+	public void add() {
+		customerDal cudtomerDal = new customerDal();
+	}
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="LaunchTerminalSettingsDialog">
+		<item key="terminalLabel" value="Telnet Terminal"/>
+		<section name="SettingsPanelControl">
+			<section name="Git Bash">
+				<item key="encoding" value="UTF-8"/>
+			</section>
+			<section name="Local Terminal">
+				<item key="encoding" value="UTF-8"/>
+			</section>
+			<section name="SSH Terminal">
+				<item key="lastHost" value="admin"/>
+				<list key="hosts">
+					<item value="admin|ssh.keep_alive:300:ip.port:22:ip.host:admin:savePassword:false:encoding:null:timeout:0:saveUser:false"/>
+				</list>
+			</section>
+			<section name="Telnet Terminal">
+				<item key="lastHost" value="admin"/>
+				<list key="hosts">
+					<item value="admin|telnet.eol:CR+NUL:ip.port:23:ip.host:admin:timeout:5"/>
+				</list>
+			</section>
+		</section>
+	</section>
+</section>

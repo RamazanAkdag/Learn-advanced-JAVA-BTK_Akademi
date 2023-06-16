@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;pom.xml&apos; to &apos;databaseConnect&apos;" description="Move &apos;pom.xml&apos; to &apos;databaseConnect&apos;" destination="/databaseConnect" element1="/SpringDemoIoCAnnotation/pom.xml" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1686853608179" updateReferences="true"/>
+</session>

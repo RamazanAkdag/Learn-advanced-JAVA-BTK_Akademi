@@ -1,0 +1,16 @@
+package com.abc.intro;
+import org.springframework.*;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+       ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+       CustomerManager manager= new CustomerManager(new CustomerDal());
+       manager.add();
+    }
+}
