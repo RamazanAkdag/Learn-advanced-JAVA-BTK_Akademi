@@ -1,0 +1,37 @@
+package com.abc.databaseDeneme;
+
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        SessionFactory factory= new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(City.class).buildSessionFactory();
+        
+        Session session= factory.getCurrentSession();
+        
+        try {
+        	session.beginTransaction();
+        	
+        	//burada yazılan sql sorgularına benzeyen ifadeler HQL --> Hibernate Query Language
+			/*List<String> cities= session.createQuery("select c.CountryCode from City c group by c.CountryCode",String.class).getResultList();
+        	
+        	for(String cityString: cities) {
+        		System.out.println(cityString);
+        	}
+        	*/
+        	session.getTransaction().commit();
+        	} finally {
+        		factory.close();
+        	}
+    }
+}

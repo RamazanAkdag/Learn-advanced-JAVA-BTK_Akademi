@@ -1,6 +1,7 @@
 package com.abc.databaseDeneme;
 
 
+
 import java.util.List;
 
 import org.hibernate.Session;
@@ -17,21 +18,54 @@ public class App
     {
         SessionFactory factory= new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(City.class).buildSessionFactory();
         
+        //Unit Of Work tasarım desenis 
         Session session= factory.getCurrentSession();
         
         try {
         	session.beginTransaction();
         	
+        	//burada yazılan sql sorgularına benzeyen ifadeler HQL --> Hibernate Query Language
         	
-			List<City> cities= session.createQuery("from City c where c.Name LIKE '%on%'",City.class).getResultList();
-        	
-        	for(City city: cities) {
-        		System.out.println(city.getName());
+        	//SELECT______________________________
+			/*List<String> cities= session.createQuery("select c.CountryCode from City c group by c.CountryCode",String.class).getResultList();
+        	//veritabanından seçmek için hql sorguları yapabilriz
+        	for(String cityString: cities) {
+        		System.out.println(cityString);
         	}
+        	*/
+        	
+        	//INSERT______________________________
+        	//veritabanına kaydetmek için ise session.save(); fonksiyonu kullanabilirirz
+        	/*City city = new City();
+        	city.setName("Düzce");
+        	city.setDistrict("Marmara");
+        	city.setCountryCode("TUR");
+        	city.setPopulation(100000);
+        	
+        	session.save(city);//veritabanına eklendi*/
+        	
+        	//UPDATE_______________________________
+        	
+        	/*City city= session.get(City.class, 4138);// idsine göre veritabanından nesneyi çekiyor
+        	//System.out.println(city.getName());
+        	city.setCountryCode("TUR");//direkt çektiği nesne üzerinde işlem yapıyor
+        	
+        	session.save(city);//çektiği nesnenin üzerine yazıyor*/
+        	
+        	//DELETE_________________________________
+        	/*City city= session.get(City.class, 4138);
+        	session.delete(city);*/
+        	
+        	
         	
         	session.getTransaction().commit();
+        	
+        	
+        	
+        	/*Bu kısımda birkaç tane işlem yaptığımızı farzedersek buradan bir işlem başarısız olduğu zaman önceki işlemler de
+        	 * iptal edilecektir bu sessionun unit of work design patterninin uygulanış biçiminde olmasıdır*/
         	} finally {
-			factory.close();
-		}
+        		factory.close();
+        	}
     }
 }

@@ -14,11 +14,22 @@
     <fullyQualifiedTypeName name="com.springDemo.IocConfig"/>
     <fullyQualifiedTypeName name="com.springDemo.ICustomerDal"/>
     <fullyQualifiedTypeName name="com.springDemo.MySqlCustomerDal"/>
-    <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
     <fullyQualifiedTypeName name="com.springDemo.CustomerManager"/>
     <fullyQualifiedTypeName name="com.springDemo.ICustomerService"/>
     <fullyQualifiedTypeName name="com.springDemo.CustomerDal"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.PropertySource"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Table"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Column"/>
+    <fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
+    <fullyQualifiedTypeName name="org.hibernate.cfg.Configuration"/>
+    <fullyQualifiedTypeName name="org.hibernate.Session"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.io.Console"/>
+    <fullyQualifiedTypeName name="com.abc.databaseDeneme.City"/>
 </qualifiedTypeNameHistroy>

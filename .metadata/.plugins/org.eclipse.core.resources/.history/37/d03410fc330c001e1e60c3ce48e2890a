@@ -1,0 +1,50 @@
+package com.abc.databaseDeneme;
+
+
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        SessionFactory factory= new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(City.class).buildSessionFactory();
+        
+        //Unit Of Work tasarım desenis 
+        Session session= factory.getCurrentSession();
+        
+        try {
+        	session.beginTransaction();
+        	
+        	//burada yazılan sql sorgularına benzeyen ifadeler HQL --> Hibernate Query Language
+			/*List<String> cities= session.createQuery("select c.CountryCode from City c group by c.CountryCode",String.class).getResultList();
+        	//veritabanından seçmek için hql sorguları yapabilriz
+        	for(String cityString: cities) {
+        		System.out.println(cityString);
+        	}
+        	*/
+        	//veritabanına kaydetmek için ise session.save(); fonksiyonu kullanabilirirz
+        	City city = new City();
+        	city.setName("Düzce");
+        	city.setDistrict("Marmara");
+        	city.setCountryCode("TUR");
+        	city.setPopulation(100000);
+        	
+        	session.save(city);//veritabanına eklendi
+        	/*Bu kısımda birkaç tane işlem yaptığımızı farzedersek buradan bir işlem başarısız olduğu zaman önceki işlemler de
+        	 * iptal edilecektir bu sessionun unit of work design patterninin uygulanış biçiminde olmasıdır*/
+        	session.getTransaction().commit();
+        	System.out.println("şehir eklendi");
+        	} finally {
+        		factory.close();
+        	}
+    }
+}
