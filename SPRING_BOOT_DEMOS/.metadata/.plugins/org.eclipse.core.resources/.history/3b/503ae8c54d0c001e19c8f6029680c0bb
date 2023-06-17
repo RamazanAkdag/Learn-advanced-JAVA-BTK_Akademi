@@ -1,0 +1,47 @@
+package com.javacourse.project.hibernateAndJpa.DataAccess;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.javacourse.project.hibernateAndJpa.Entities.City;
+import com.mysql.cj.Session;
+
+import jakarta.persistence.EntityManager;
+
+public class HibernateCityDal implements ICityDal{
+	
+	private EntityManager entityManager;
+
+	@Autowired
+	public HibernateCityDal(EntityManager entityManager) {
+		
+		this.entityManager = entityManager;
+	}
+
+	@Override
+	public List<City> getAll() {
+		// TODO Auto-generated method stub
+		entityManager.unwrap(Session.class);
+		return null;
+	}
+
+	@Override
+	public void add(City city) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(City city) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(City city) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
